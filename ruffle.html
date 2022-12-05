@@ -28,7 +28,7 @@
         <div id='flashContent' style='margin:0;padding:0;width: 100%; height: 100%;'></div>
 
         <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-                <script src="/away-player/loader.js"></script>
+                <script src="/games/away-player/loader.js"></script>
         <script>
             
           var swfFile = window.location.search.replace( '?', ''); ;
@@ -58,8 +58,8 @@
                         var awayGameConfig = {
                             width: "100%",
                             height: "100%",
-                            baseUrl: '/away-player/',
-                            runtime: ['/away-player/runtime.js'],
+                            baseUrl: '/games/away-player/',
+                            runtime: ['/games/away-player/runtime.js'],
                             binary: [{
                                 path: swfFile,
                                 resourceType: 'GAME',
@@ -88,7 +88,7 @@
             });
         </script>
 
-        <script type="text/javascript" src="/away-player/swfobject_2_3.js"></script>
+        <script type="text/javascript" src="/games/away-player/swfobject_2_3.js"></script>
   
 </body>
 </html>
