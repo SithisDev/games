@@ -79,6 +79,7 @@
                                 .then((_, hide) => {
                                     window.dispatchEvent(new CustomEvent('awayfl-player-load'));
                                     hide && hide();
+                                    document.getElementById("panic").style.display = "none";
                                 }).catch(() => {
                                     console.info("awayPlayer failed");
                                 });
