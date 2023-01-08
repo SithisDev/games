@@ -6908,7 +6908,7 @@ var Module = (() => {
                     return h
                 },
                 ma: function(e) {
-                    var r = Date.now();
+                    var r = 1665224871000;
                     return P[e >> 2] = r / 1e3 | 0, P[e + 4 >> 2] = r % 1e3 * 1e3 | 0, 0
                 },
                 w: function(e) {
