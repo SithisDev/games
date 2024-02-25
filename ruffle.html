@@ -19,14 +19,10 @@
         a:hover, a:focus, a:active {
             /*color:#8ed9ed;*/
         }
-
     </style>
     </head>
-
 <body style='margin:0;padding:0;' class="">
-
         <div id='flashContent' style='margin:0;padding:0;width: 100%; height: 100%;'></div>
-
         <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
                 <script src="/games/away-player/loader.js"></script>
         <script>
@@ -38,19 +34,22 @@
                     autoplay: 'on',
                     unmuteOverlay: 'hidden'
                 };
-    
                 const ruffle = window.RufflePlayer.newest();
-                const player = ruffle.createPlayer();
+                let player = ruffle.createPlayer();
                 const container = document.getElementById("flashContent");
                 container.appendChild(player);
-                player.load("swfFile");
-
+                player.load(swfFile).then(()=>{
+                        console.info("Ruffle successfully loaded the file");
+                    }
+                ).catch((e)=>{
+                        console.error("Ruffle failed to load the file: "+e);
+                    }
+                );
                 player.style.width = "100%";
                 player.style.height = "100%";
                 player.addEventListener('loadedmetadata', (e)=>{
                     if (player.metadata.isActionScript3) {
                         player.panic();
-
                         var awayGameConfig = {
                             width: "100%",
                             height: "100%",
@@ -65,9 +64,7 @@
                         };
                         AWAYFL.LegacyLoader.init(awayGameConfig);
                         AWAYFL.LegacyLoader.runGame((fill) => {
-
                         }, (config, hideLoader) => {
-
                             const awayPlayer = new AWAYFL.Player(document, config);
                             window.dispatchEvent(new CustomEvent('awayfl-player-init', {detail: player}));
                             awayPlayer
@@ -83,7 +80,6 @@
                 });
             });
         </script>
-
         <script type="text/javascript" src="/games/away-player/swfobject_2_3.js"></script>
   
 </body>
