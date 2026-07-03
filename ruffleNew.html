@@ -9,30 +9,12 @@
 var swfFile = window.location.search.replace( '?', ''); ;
       window.RufflePlayer = window.RufflePlayer || {};
 window.RufflePlayer.config = {
-    // Options affecting the whole page
-    "publicPath": undefined,
-    "polyfills": true,
-	"allowNetworking" : "internal",
-	"allowScriptAccess": false,
-    "autoplay": "auto",
-		 "scale": "showAll",
-                "forceScale": true,
-    "unmuteOverlay": "visible",
-    "backgroundColor": null,
-    "wmode": "direct",
-    "letterbox": "fullscreen",
-    "warnOnUnsupportedContent": true,
-    "contextMenu": true,
-    "showSwfDownload": true,
-    "upgradeToHttps": window.location.protocol === "https:",
-    "maxExecutionDuration": {"secs": 15, "nanos": 0},
-    "logLevel": "error",
-    "base": null,
-    "menu": true,
-    "salign": "",
-    "scale": "showAll",
-    "quality": "high",
-    "preloader": false,
+                        "warnOnUnsupportedContent": false,
+                        "maxExecutionDuration": 60,
+                        "base": null,
+                        "forceScale": false,
+                        "quality": 'high',
+                        "allowScriptAccess": false
 };
             document.addEventListener("DOMContentLoaded", function () {
               var swfFile = window.location.search.replace( '?', ''); ;
