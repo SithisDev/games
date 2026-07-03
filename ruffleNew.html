@@ -9,11 +9,16 @@
 var swfFile = window.location.search.replace( '?', ''); ;
       window.RufflePlayer = window.RufflePlayer || {};
 window.RufflePlayer.config = {
+						"autoplay": "on",
+						"contextMenu": "off",
+						"showSwfDownload": true,
+						"menu": false,
+						"quality": "medium",
+						"openUrlMode": "deny",
                         "warnOnUnsupportedContent": false,
                         "maxExecutionDuration": 60,
                         "base": null,
                         "forceScale": false,
-                        "quality": 'high',
                         "allowScriptAccess": false
 };
             document.addEventListener("DOMContentLoaded", function () {
